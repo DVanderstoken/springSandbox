@@ -22,11 +22,15 @@ eureka:
       
 ---
 spring:
-  profiles: dockerpeer1
+  config:
+    activate:
+      on-profile: dockerpeer1
   cloud.config.label: docker
   
 ---
   
 spring:
-  profiles: dockerpeer2
+  config:
+    activate:
+      on-profile: dockerpeer2
   cloud.config.label: docker
