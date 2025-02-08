@@ -8,7 +8,7 @@
 
 ### Big picture
 
-![Big picture](./docs/images/DesendettementSpringCloudV3.jpg)
+![Big picture](./docs/images/VueGlobale.PNG)
 
 Projects is completed with *Prometheus* and *Grafana*.
 
