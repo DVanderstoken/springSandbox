@@ -5,7 +5,8 @@ spring:
   boot:
     admin:
       ui:
-        cache-templates: true     
+        cache-templates: true
+      context-path: /  
     output:
       ansi:
         enabled: always

@@ -1,4 +1,4 @@
-version: '3.5'
+
 services: 
       
   prometheus:
@@ -206,41 +206,6 @@ services:
           memory: 192M
         reservations:
           memory: 128M
-
-  spring-cloud-gateway:
-    build:
-      context: ./spring-cloud-gateway
-    restart: always
-    container_name: spring-cloud-gateway
-    hostname: spring-cloud-gateway
-    depends_on:
-      - spring-cloud-netflix-eureka-peer1
-      - spring-cloud-netflix-eureka-peer2
-    ports:
-      - "10200:10200"
-    volumes:
-      - logs:/var/log:rw
-    networks:
-      - spring-sandbox-network
-    deploy:
-      resources:
-        limits:
-          memory: 192M
-        reservations:
-          memory: 128M
-      
-  client-frontend:
-    build:
-      context: ./ng-ms-client-frontend
-    restart: always
-    container_name: ng-client-frontend
-    hostname: ng-client-frontend
-    depends_on:
-      - ms-client-backend
-    ports:
-      -  "10400:80"
-    networks:
-      - spring-sandbox-network
 
 networks:
   spring-sandbox-network:

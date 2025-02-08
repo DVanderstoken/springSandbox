@@ -7,24 +7,12 @@
 	<parent>
 		<groupId>nc.dva</groupId>
 		<artifactId>spring-cloud-examples</artifactId>
-		<version>23.11</version>
+		<version>25.02</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 	<artifactId>spring-boot-admin</artifactId>
 	<packaging>jar</packaging>
-
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-dependencies</artifactId>
-				<type>pom</type>
-				<version>${spring-boot.version}</version>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
 
 	<dependencies>
 		<dependency>
@@ -48,13 +36,13 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${spring-boot.version}</version>
 				<configuration>
 					<executable>true</executable>
 					<addResources>true</addResources>
 					<jvmArguments>-Xmx128m -Xss512k</jvmArguments>
 					<mainClass>nc.dva.admin.SpringBootAdminApplication</mainClass>
 					<skip>false</skip>
-					<fork>true</fork>
 				</configuration>
 				<executions>
 					<execution>
@@ -63,14 +51,6 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
