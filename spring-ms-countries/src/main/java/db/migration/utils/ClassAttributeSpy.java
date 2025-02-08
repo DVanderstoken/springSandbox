@@ -4,8 +4,8 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 
-import javax.persistence.Column;
-import javax.persistence.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Table;
 
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -50,7 +50,7 @@ public class ClassAttributeSpy {
 
             for (Field field : fields) {
 
-                if (field.isAnnotationPresent(javax.persistence.Column.class)) {
+                if (field.isAnnotationPresent(jakarta.persistence.Column.class)) {
 
                     result[i] = field.getName();
 
@@ -176,7 +176,7 @@ public class ClassAttributeSpy {
             throws NullPointerException, IndexOutOfBoundsException {
 
         Table[] tables = clazz
-                .getAnnotationsByType(javax.persistence.Table.class);
+                .getAnnotationsByType(jakarta.persistence.Table.class);
 
         if (tables.length > 1) {
 

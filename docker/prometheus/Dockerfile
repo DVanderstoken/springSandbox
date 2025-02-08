@@ -1,2 +1,2 @@
-FROM prom/prometheus:v2.20.1
+FROM prom/prometheus:latest
 COPY prometheus.yml /etc/prometheus
