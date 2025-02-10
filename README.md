@@ -10,7 +10,13 @@
 
 ![Big picture](./docs/images/VueGlobale.PNG)
 
-Projects is completed with *Prometheus* and *Grafana*.
+What you can find :
+- stand-alone Spring based applications
+- Service discovery with [Eureka](https://spring.io/projects/spring-cloud-netflix#overview) (Spring Cloud Netflix)
+- Spring Boot applications monitoring with [Spring Boot Admin](https://docs.spring-boot-admin.com/3.4.1/getting-started.html)
+- Spring Boot applications monitoring with [Micrometer](https://micrometer.io/), [Prometheus](https://prometheus.io/) and [Grafana](https://grafana.com/)
+- [Circuit breaker Pattern](https://spring.io/guides/gs/cloud-circuit-breaker) for microservices
+
 
 ### Run projects
 
