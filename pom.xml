@@ -19,7 +19,7 @@
 	<properties>
 		<spring-boot-admin.version>3.4.1</spring-boot-admin.version>
 		<spring-boot.version>3.4.2</spring-boot.version>
-		<spring-cloud.version>2024.0.0</spring-cloud.version>
+		<spring-cloud.version>2024.0.1</spring-cloud.version>
 		<java.version>17</java.version>
 		<encoding>UTF-8</encoding>
     <project.build.sourceEncoding>${encoding}</project.build.sourceEncoding>
