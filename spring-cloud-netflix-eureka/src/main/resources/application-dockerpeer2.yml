@@ -3,10 +3,12 @@ server:
 eureka:
   instance:    
     hostname: spring-cloud-netflix-eureka-peer2
+    lease-renewal-interval-in-seconds: 3
+    lease-expiration-duration-in-seconds: 4
   client:
     registerWithEureka: true
     serviceUrl:
-      defaultZone: http://spring-cloud-netflix-eureka-peer1:10300/eureka/,http://spring-cloud-netflix-eureka-peer2:10301/eureka/
+      defaultZone: http://spring-cloud-netflix-eureka-peer1:10300/eureka/
   server:
     waitTimeInMsWhenSyncEmpty: 0  
 

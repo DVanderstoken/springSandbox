@@ -57,17 +57,13 @@ public class PlayerController {
 
 		String finalURI = gatewayBaseURI + "/geolocation/api/v1/countries";
 
-		System.out.println(finalURI);
-
 		PaysEtTerritoiresEtrangers[] result = restTemplate.getForObject(finalURI, PaysEtTerritoiresEtrangers[].class);
-
-		System.out.println(result);
 
 		return new HttpEntity<Object>(result);
 
 	}
-	
-	@GetMapping(path = "/api/v1/fallback/countries")
+
+	@GetMapping(path = "/fallback/api/v1/countries")
 	public HttpEntity<?> getAllLocalCountries() {
 
 		return new HttpEntity<Object>(lRepository.findCountries());

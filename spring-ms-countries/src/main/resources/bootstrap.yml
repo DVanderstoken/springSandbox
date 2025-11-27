@@ -1,6 +1,4 @@
 spring:
-  application:
-    name: geolocation
 
   cloud:
     config:
@@ -8,29 +6,17 @@ spring:
       discovery:
         enabled: true
         serviceId: SPRING-CLOUD-CONFIG-SERVER
-        
+
   cache:
     caffeine:
-      spec: maximumSize=500,expireAfterAccess=120s 
-    
+     spec: maximumSize=500,expireAfterAccess=120s
+
 eureka:
   client:
+    region: dev.gnc
+    registerWithEureka: true
     serviceUrl:
-      defaultZone: http://spring-cloud-netflix-eureka-peer1:10300/eureka/,http://spring-cloud-netflix-eureka-peer2:10301/eureka/
+      defaultZone: http://spring-cloud-netflix-eureka-peer2:10301/eureka/,http://spring-cloud-netflix-eureka-peer1:10300/eureka/
+    fetch-registry: true
     healthcheck:
       enabled: true
-      
----
-spring:
-  config:
-    activate:
-      on-profile: dockerpeer1
-  cloud.config.label: docker
-  
----
-  
-spring:
-  config:
-    activate:
-      on-profile: dockerpeer2
-  cloud.config.label: docker

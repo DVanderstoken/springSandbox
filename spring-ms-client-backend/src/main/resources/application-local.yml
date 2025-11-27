@@ -23,8 +23,7 @@ spring:
     driverClassName: org.hsqldb.jdbcDriver
     username: sa
     password:
-    platform: hsqldb 
-      
+
 management:
   endpoints:
     web:
@@ -39,6 +38,7 @@ logging:
     root: INFO 
    
 server:
+  forward-headers-strategy: native
   port: 10600
  
 

@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>nc.dva</groupId>
 		<artifactId>spring-cloud-examples</artifactId>
-		<version>25.02</version>
+		<version>25.11</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 	<artifactId>spring-cloud-netflix-eureka</artifactId>
@@ -34,6 +34,10 @@
 						spring-cloud-netflix-hystrix
 					</artifactId>
 				</exclusion>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
 			</exclusions>
 		</dependency>
 		<dependency>
@@ -58,19 +62,8 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>${spring-boot.version}</version>
 				<configuration>
-					<executable>true</executable>
-					<addResources>true</addResources>
-					<jvmArguments>-Xmx128m -Xss512k</jvmArguments>
 					<mainClass>nc.dva.eureka.SpringCloudNetflixEurekaApplication</mainClass>
-					<skip>false</skip>
 				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 	</build>

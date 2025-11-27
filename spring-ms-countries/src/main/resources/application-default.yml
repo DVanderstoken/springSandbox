@@ -23,13 +23,24 @@ spring:
     driverClassName: org.hsqldb.jdbcDriver
     username: sa
     password:
-    platform: hsqldb
   data:
     rest:
       base-path: /api
-  sleuth:
-    web:
-      enabled: true
+
+  sql:
+    init:
+      platform: hsqldb
+
+  cloud:
+    config:
+      fail-fast: true
+      discovery:
+        enabled: true
+        serviceId: SPRING-CLOUD-CONFIG-SERVER
+
+  cache:
+    caffeine:
+     spec: maximumSize=500,expireAfterAccess=120s
       
 management:
   endpoints:
@@ -51,7 +62,3 @@ server:
       protocol-header: x-forwarded-proto
   forward-headers-strategy: none
 
-eureka:
-  client:
-    region: dev.gnc
-    registerWithEureka: true

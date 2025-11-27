@@ -16,6 +16,9 @@ server:
 eureka:
   instance:
     leaseRenewalIntervalInSeconds: 30
+  client:
+    register-with-eureka: false
+    fetch-registry: false
     
 management:
   endpoints:

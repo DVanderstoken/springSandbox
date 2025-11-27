@@ -4,7 +4,6 @@ eureka:
   instance:    
     hostname: localhost
   client:
-    registerWithEureka: true
     serviceUrl:
       defaultZone: http://localhost:10300/eureka/,http://localhost:10301/eureka/
   server:

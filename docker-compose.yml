@@ -185,6 +185,29 @@ services:
         reservations:
           memory: 128M
 
+
+  spring-cloud-gateway:
+    build:
+      context: ./spring-cloud-gateway
+    restart: always
+    container_name: spring-cloud-gateway
+    hostname: spring-cloud-gateway
+    depends_on:
+      - spring-cloud-netflix-eureka-peer1
+      - spring-cloud-netflix-eureka-peer2
+    ports:
+      - "10200:10200"
+    volumes:
+      - logs:/var/log:rw
+    networks:
+      - spring-sandbox-network
+    deploy:
+      resources:
+        limits:
+          memory: 192M
+        reservations:
+          memory: 128M
+
   ms-client-backend:
     build:
       context: ./spring-ms-client-backend

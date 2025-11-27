@@ -16,10 +16,10 @@ scrape_configs:
   static_configs:
   - targets: ['spring-boot-admin:10100']
 
-- job_name: spring-cloud-gateway
-  metrics_path: /actuator/prometheus
-  static_configs:
-  - targets: ['spring-cloud-gateway:10200']
+#- job_name: spring-cloud-gateway
+#  metrics_path: /actuator/prometheus
+#  static_configs:
+#  - targets: ['spring-cloud-gateway:10200']
 
 - job_name: spring-cloud-netflix-eureka
   metrics_path: /actuator/prometheus

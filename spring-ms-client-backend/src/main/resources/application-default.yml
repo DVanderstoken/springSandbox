@@ -24,7 +24,6 @@ spring:
     driverClassName: org.hsqldb.jdbcDriver
     username: sa
     password:
-    platform: hsqldb 
       
 management:
   endpoints:

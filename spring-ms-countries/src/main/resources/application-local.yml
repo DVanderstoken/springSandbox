@@ -23,13 +23,15 @@ spring:
     driverClassName: org.hsqldb.jdbcDriver
     username: sa
     password:
-    platform: hsqldb
   data:
     rest:
       base-path: /api
   sleuth:
     web:
       enabled: true
+  sql:
+    init:
+      platform: hsqldb
       
 management:
   endpoints:
@@ -55,3 +57,6 @@ eureka:
   client:
     region: dev.gnc
     registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:10301/eureka/,http://localhost:10300/eureka/
+    fetch-registry: true

@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>nc.dva</groupId>
 		<artifactId>spring-cloud-examples</artifactId>
-		<version>25.02</version>
+		<version>25.11</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
@@ -30,7 +30,7 @@
 		</dependency>
 
 	</dependencies>
-
+	
 	<build>
 		<plugins>
 			<plugin>
@@ -38,19 +38,8 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>${spring-boot.version}</version>
 				<configuration>
-					<executable>true</executable>
-					<addResources>true</addResources>
-					<jvmArguments>-Xmx128m -Xss512k</jvmArguments>
 					<mainClass>nc.dva.admin.SpringBootAdminApplication</mainClass>
-					<skip>false</skip>
 				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 	</build>

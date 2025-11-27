@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>nc.dva</groupId>
 	<artifactId>spring-cloud-examples</artifactId>
-	<version>25.02</version>
+	<version>25.11</version>
 	<packaging>pom</packaging>
 
 	<modules>
@@ -14,15 +14,16 @@
 		<module>spring-cloud-config-serveur</module>
 		<module>spring-ms-countries</module>
 		<module>spring-ms-client-backend</module>
+		<module>spring-cloud-gateway</module>
 	</modules>
 
 	<properties>
-		<spring-boot-admin.version>3.4.1</spring-boot-admin.version>
-		<spring-boot.version>3.4.2</spring-boot.version>
-		<spring-cloud.version>2024.0.0</spring-cloud.version>
+		<spring-boot-admin.version>3.5.6</spring-boot-admin.version>
+		<spring-boot.version>3.5.8</spring-boot.version>
+		<spring-cloud.version>2025.0.0</spring-cloud.version>
 		<java.version>17</java.version>
 		<encoding>UTF-8</encoding>
-    <project.build.sourceEncoding>${encoding}</project.build.sourceEncoding>
+		<project.build.sourceEncoding>${encoding}</project.build.sourceEncoding>
 	</properties>
 
 	<dependencyManagement>
@@ -48,8 +49,8 @@
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-    			<artifactId>maven-clean-plugin</artifactId>
-    			<version>3.4.0</version>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>3.4.0</version>
 				<configuration>
 					<filesets>
 						<fileset>
@@ -72,6 +73,23 @@
 					<source>${java.version}</source>
 					<target>${java.version}</target>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${spring-boot.version}</version>
+				<configuration>
+					<addResources>true</addResources>
+					<jvmArguments>-Xmx128m -Xss512k</jvmArguments>
+					<skip>false</skip>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

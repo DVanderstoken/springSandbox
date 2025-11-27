@@ -24,6 +24,7 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:10300/eureka/,http://localhost:10301/eureka/
+    register-with-eureka: true
 
 management:
   endpoints:

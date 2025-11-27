@@ -8,4 +8,5 @@
             <pattern>[%thread] %highlight(%-5level) %cyan(%logger{15}) - %msg %n</pattern>
         </encoder>
 	</appender>
+	<logger name="ch.qos.logback" level="debug" />
 </configuration>
